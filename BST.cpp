@@ -92,11 +92,7 @@ void delete_node(int val){
 
 
         current->value=tmp->value;
-
-        if(previous->value > tmp->value)
-            previous->left= tmp->right;
-        else
-            previous->right= tmp->right;
+        previous->left= tmp->right;
 
         delete(tmp);
 	}
@@ -130,3 +126,4 @@ main(){
 
     return 0;
 }
+

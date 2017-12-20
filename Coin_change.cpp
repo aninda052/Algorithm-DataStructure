@@ -5,6 +5,7 @@ int coin[]={5,8,11,15,18}; //value of coins available
 int make; //our target value
 int dp[6][100];
 int call(int i,int amount,int make){
+    if(amount==make)return 1;
     if(i>=5){ //All coins have been taken
         if(amount==make)return 1;
         else return 0;
@@ -17,9 +18,10 @@ int call(int i,int amount,int make){
 
 }
 int main(){
-    memset(dp,-1,sizeof(dp)); //Initialize
     while(cin>>make){
+        memset(dp,-1,sizeof(dp)); //Initialize
         cout<<call(0,0,make)<<endl;
     }
     return 0;
 }
+
